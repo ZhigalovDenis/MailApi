@@ -1,0 +1,54 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33815.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mail", "Mail\Mail.csproj", "{42D02720-BFAF-4682-8163-0B40BCC41454}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mail.Domain", "Mail.Domain", "{8591B5F4-AA31-4454-BD08-421E64961172}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mail.Domain", "Mail.Domain\Mail.Domain.csproj", "{8B69A85F-7D39-4711-ABA9-255EAA247E3B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mail.Service", "Mail.Service", "{9C4B1F3A-39FE-4624-9264-9873AA7BA64F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Mail.Service", "Mail.Service\Mail.Service.csproj", "{03CE22BF-DC59-42D3-B8C5-27A96BAD1CD4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Mail.DAL", "Mail.DAL", "{5C20A816-93A3-4D9B-9903-669465F95918}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mail.DAL", "Mail.DAL\Mail.DAL.csproj", "{040D0ED2-2FF5-4055-A4AC-679C61365FF1}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{42D02720-BFAF-4682-8163-0B40BCC41454}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{42D02720-BFAF-4682-8163-0B40BCC41454}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{42D02720-BFAF-4682-8163-0B40BCC41454}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{42D02720-BFAF-4682-8163-0B40BCC41454}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B69A85F-7D39-4711-ABA9-255EAA247E3B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B69A85F-7D39-4711-ABA9-255EAA247E3B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B69A85F-7D39-4711-ABA9-255EAA247E3B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B69A85F-7D39-4711-ABA9-255EAA247E3B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{03CE22BF-DC59-42D3-B8C5-27A96BAD1CD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{03CE22BF-DC59-42D3-B8C5-27A96BAD1CD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{03CE22BF-DC59-42D3-B8C5-27A96BAD1CD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{03CE22BF-DC59-42D3-B8C5-27A96BAD1CD4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{040D0ED2-2FF5-4055-A4AC-679C61365FF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{040D0ED2-2FF5-4055-A4AC-679C61365FF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{040D0ED2-2FF5-4055-A4AC-679C61365FF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{040D0ED2-2FF5-4055-A4AC-679C61365FF1}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{8B69A85F-7D39-4711-ABA9-255EAA247E3B} = {8591B5F4-AA31-4454-BD08-421E64961172}
+		{03CE22BF-DC59-42D3-B8C5-27A96BAD1CD4} = {9C4B1F3A-39FE-4624-9264-9873AA7BA64F}
+		{040D0ED2-2FF5-4055-A4AC-679C61365FF1} = {5C20A816-93A3-4D9B-9903-669465F95918}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C47B0CC4-E026-439B-AE51-38AA284907A9}
+	EndGlobalSection
+EndGlobal
