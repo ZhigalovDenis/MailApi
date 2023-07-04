@@ -33,7 +33,7 @@ namespace Mail.Domain.Logic
 
             try
             {
-                smtpClient.Send(mailMessage);
+                await smtpClient.SendMailAsync(mailMessage);
             }
             catch (SmtpException)
             {
