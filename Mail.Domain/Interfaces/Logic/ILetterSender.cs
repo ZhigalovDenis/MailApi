@@ -3,7 +3,7 @@ using Mail.Domain.Models;
 
 namespace Mail.Domain.Interfaces.Logic
 {
-    internal interface ILetterSender
+    public interface ILetterSender
     {
         /// <summary>
         /// Отправляет письмо.

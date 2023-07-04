@@ -19,7 +19,7 @@ namespace Mail.Domain.Interfaces.Services
         /// </summary>
         /// <param name="letterInfo">Информация о письме.</param>
         /// <returns>Асинхронная задача.</returns>
-        Task SaveLatter(LetterInfoModel letterInfo);
+        Task SaveLetter(LetterInfoModel letterInfo);
 
         /// <summary>
         /// Возвращает список всех писем.

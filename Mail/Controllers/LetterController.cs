@@ -40,11 +40,11 @@ namespace Mail.Controllers
             {
                 await _letterService.Send(LetterDto.ToModel(letterDto));
 
-                await _letterService.SaveLatter(LetterHelper.CreateInfo(letterDto, ResultStatus.Ok, ""));
+                await _letterService.SaveLetter(LetterHelper.CreateInfo(letterDto, ResultStatus.Ok, EmptyMessage));
             }
             catch (SmtpException ex)
             {
-                await _letterService.SaveLatter(LetterHelper.CreateInfo(letterDto, ResultStatus.Failed, ex.Message));
+                await _letterService.SaveLetter(LetterHelper.CreateInfo(letterDto, ResultStatus.Failed, ex.Message));
 
                 return BadRequest();
             }

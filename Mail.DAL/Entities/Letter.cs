@@ -1,7 +1,4 @@
-﻿
-using Mail.DAL.Entitys;
-using Mail.Domain.Models;
-
+﻿using Mail.Domain.Models;
 namespace Mail.DAL.Entities;
 
 public class Letter
@@ -29,7 +26,7 @@ public class Letter
     /// <summary>
     /// Связанный статус письма.
     /// </summary>
-    public LetterStatus LetterStatusEnt { get; private init; }
+    public LetterStatus LetterStatus { get; private init; }
 
     /// <summary>
     /// Создает экземпляр класса LetterEnt из модели LetterInfo.

@@ -1,7 +1,7 @@
 ﻿
+using Mail.Domain.Interfaces.Logic;
 using Mail.Domain.Interfaces.Repositories;
 using Mail.Domain.Interfaces.Services;
-using Mail.Domain.Logic;
 using Mail.Domain.Models;
 
 namespace Mail.Service.Implementation
@@ -9,10 +9,12 @@ namespace Mail.Service.Implementation
     public class LetterService : ILetterService
     {
         private readonly ILetterRepository _letterRepository;
+        private readonly ILetterSender _letterSender;
 
-        public LetterService(ILetterRepository letterRepository)
+        public LetterService(ILetterRepository letterRepository, ILetterSender letterSender)
         {
             _letterRepository = letterRepository;
+            _letterSender = letterSender;
         }
 
         /// <summary>
@@ -29,9 +31,9 @@ namespace Mail.Service.Implementation
         /// </summary>
         /// <param name="letterInfo"></param>
         /// <returns></returns>
-        public async Task SaveLatter(LetterInfoModel letterInfo)
+        public async Task SaveLetter(LetterInfoModel letterInfo)
         {
-            await _letterRepository.SaveLatter(letterInfo);
+            await _letterRepository.SaveLetter(letterInfo);
         }
 
         /// <summary>
@@ -41,7 +43,7 @@ namespace Mail.Service.Implementation
         /// <returns></returns>
         public async Task Send(LetterModel letter)
         {
-            await new LetterSender().Send(letter);
+            await _letterSender.Send(letter);
         }
     }
 }

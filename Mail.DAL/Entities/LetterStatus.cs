@@ -1,9 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
 using Mail.Domain.Models;
-using Mail.DAL.Entities;
 
-namespace Mail.DAL.Entitys
+namespace Mail.DAL.Entities
 {
     public class LetterStatus
     {
@@ -11,7 +10,7 @@ namespace Mail.DAL.Entitys
         /// Уникальный идентификатор статуса письма.
         /// </summary>
         [Key]
-        [ForeignKey("LetterEnt")]
+        [ForeignKey("Letter")]
         public int Id { get; private init; }
 
         /// <summary>
@@ -32,14 +31,14 @@ namespace Mail.DAL.Entitys
         /// <summary>
         /// Связанное письмо.
         /// </summary>
-        public Letter LetterEnt { get; private init; }
+        public Letter Letter { get; private init; }
 
         /// <summary>
-        /// Создает экземпляр класса LetterStatusEnt из модели LetterInfo и сущности LetterEnt.
+        /// Создает экземпляр класса LetterStatusEnt из модели LetterInfo и сущности Letter.
         /// </summary>
         /// <param name="model">Модель LetterInfo.</param>
-        /// <param name="entity">Сущность LetterEnt.</param>
-        /// <returns>Экземпляр класса LetterStatusEnt.</returns>
+        /// <param name="entity">Сущность Letter.</param>
+        /// <returns>Экземпляр класса LetterStatus.</returns>
         public static LetterStatus FromModel(LetterInfoModel model, Letter entity)
         {
             return new LetterStatus

@@ -1,5 +1,4 @@
 ﻿using Mail.DAL.Entities;
-using Mail.DAL.Entitys;
 using Microsoft.EntityFrameworkCore;
 
 namespace Mail.DAL

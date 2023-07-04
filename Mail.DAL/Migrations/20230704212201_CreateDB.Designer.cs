@@ -12,8 +12,8 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace Mail.DAL.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20230701060734_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20230704212201_CreateDB")]
+    partial class CreateDB
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -25,7 +25,7 @@ namespace Mail.DAL.Migrations
 
             NpgsqlModelBuilderExtensions.UseIdentityByDefaultColumns(modelBuilder);
 
-            modelBuilder.Entity("Mail.DAL.Entitys.LetterEnt", b =>
+            modelBuilder.Entity("Mail.DAL.Entities.Letter", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -50,7 +50,7 @@ namespace Mail.DAL.Migrations
                     b.ToTable("Letters");
                 });
 
-            modelBuilder.Entity("Mail.DAL.Entitys.LetterStatusEnt", b =>
+            modelBuilder.Entity("Mail.DAL.Entities.LetterStatus", b =>
                 {
                     b.Property<int>("Id")
                         .HasColumnType("integer");
@@ -71,20 +71,20 @@ namespace Mail.DAL.Migrations
                     b.ToTable("LetterStatuses");
                 });
 
-            modelBuilder.Entity("Mail.DAL.Entitys.LetterStatusEnt", b =>
+            modelBuilder.Entity("Mail.DAL.Entities.LetterStatus", b =>
                 {
-                    b.HasOne("Mail.DAL.Entitys.LetterEnt", "LetterEnt")
-                        .WithOne("LetterStatusEnt")
-                        .HasForeignKey("Mail.DAL.Entitys.LetterStatusEnt", "Id")
+                    b.HasOne("Mail.DAL.Entities.Letter", "Letter")
+                        .WithOne("LetterStatus")
+                        .HasForeignKey("Mail.DAL.Entities.LetterStatus", "Id")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("LetterEnt");
+                    b.Navigation("Letter");
                 });
 
-            modelBuilder.Entity("Mail.DAL.Entitys.LetterEnt", b =>
+            modelBuilder.Entity("Mail.DAL.Entities.Letter", b =>
                 {
-                    b.Navigation("LetterStatusEnt")
+                    b.Navigation("LetterStatus")
                         .IsRequired();
                 });
 #pragma warning restore 612, 618

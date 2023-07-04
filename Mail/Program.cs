@@ -1,7 +1,9 @@
 using Mail.DAL;
 using Mail.DAL.Repositories;
+using Mail.Domain.Interfaces.Logic;
 using Mail.Domain.Interfaces.Repositories;
 using Mail.Domain.Interfaces.Services;
+using Mail.Domain.Logic;
 using Mail.Service.Implementation;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,13 +18,14 @@ builder.Services.AddControllers();
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+
 builder.Services.AddSwaggerGen();
-builder.Services.AddTransient<ILetterService, LetterService>();
-builder.Services.AddTransient<ILetterRepository, LetterRepository>();
+builder.Services.AddSingleton<ILetterService, LetterService>();
+builder.Services.AddSingleton<ILetterRepository, LetterRepository>();
+builder.Services.AddSingleton<ILetterSender, LetterSender>();
+
 
 var app = builder.Build();
-
-
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

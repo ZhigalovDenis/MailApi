@@ -1,5 +1,4 @@
 ﻿using Mail.DAL.Entities;
-using Mail.DAL.Entitys;
 using Mail.Domain.Interfaces.Repositories;
 using Mail.Domain.Models;
 using Microsoft.EntityFrameworkCore;
@@ -47,7 +46,7 @@ namespace Mail.DAL.Repositories
         /// </summary>
         /// <param name="letterInfo">Информация о письме и его статусе.</param>
         /// <returns>Задача, представляющая асинхронную операцию сохранения.</returns>
-        public async Task SaveLatter(LetterInfoModel letterInfo)
+        public async Task SaveLetter(LetterInfoModel letterInfo)
         {
             var letterEnt = Letter.FromModel(letterInfo);
             _db.Letters.Add(letterEnt);
