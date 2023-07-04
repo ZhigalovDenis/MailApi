@@ -12,12 +12,12 @@ namespace Mail.Domain.Interfaces.Repositories
         /// </summary>
         /// <param name="letterInfo">Информация о письме.</param>
         /// <returns>Асинхронная задача.</returns>
-        Task SaveLatter(LetterInfo letterInfo);
+        Task SaveLatter(LetterInfoModel letterInfo);
 
         /// <summary>
         /// Возвращает список всех писем.
         /// </summary>
         /// <returns>Асинхронная задача, возвращающая список информации о письмах.</returns>
-        Task<IEnumerable<LetterInfo>> GetAll();
+        Task<IEnumerable<LetterInfoModel>> GetAll();
     }
 }

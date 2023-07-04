@@ -1,4 +1,5 @@
-﻿using Mail.DAL.Entitys;
+﻿using Mail.DAL.Entities;
+using Mail.DAL.Entitys;
 using Mail.Domain.Interfaces.Repositories;
 using Mail.Domain.Models;
 using Microsoft.EntityFrameworkCore;
@@ -18,19 +19,19 @@ namespace Mail.DAL.Repositories
         /// Получить все письма с информацией о статусе.
         /// </summary>
         /// <returns>Коллекция писем с информацией о статусе.</returns>
-        public async Task<IEnumerable<LetterInfo>> GetAll()
+        public async Task<IEnumerable<LetterInfoModel>> GetAll()
         {
             var query = from letter in _db.Letters
                         join letterStatus in _db.LetterStatuses on letter.Id equals letterStatus.Id
-                        select new LetterInfo
+                        select new LetterInfoModel
                         {
-                            Letter = new Letter
+                            Letter = new LetterModel
                             {
                                 Body = letter.Body,
                                 Recipients = letter.Recipients,
                                 Subject = letter.Subject,
                             },
-                            LetterStatus = new LetterStatus
+                            LetterStatus = new LetterStatusModel
                             {
                                 CreateAt = letterStatus.CreateAt,
                                 FailedMessage = letterStatus.FailedMessage,
@@ -46,13 +47,13 @@ namespace Mail.DAL.Repositories
         /// </summary>
         /// <param name="letterInfo">Информация о письме и его статусе.</param>
         /// <returns>Задача, представляющая асинхронную операцию сохранения.</returns>
-        public async Task SaveLatter(LetterInfo letterInfo)
+        public async Task SaveLatter(LetterInfoModel letterInfo)
         {
-            var letterEnt = LetterEnt.FromModel(letterInfo);
+            var letterEnt = Letter.FromModel(letterInfo);
             _db.Letters.Add(letterEnt);
             await _db.SaveChangesAsync();
 
-            var letterStatusEnt = LetterStatusEnt.FromModel(letterInfo, letterEnt);
+            var letterStatusEnt = LetterStatus.FromModel(letterInfo, letterEnt);
             _db.LetterStatuses.Add(letterStatusEnt);
             await _db.SaveChangesAsync();
         }

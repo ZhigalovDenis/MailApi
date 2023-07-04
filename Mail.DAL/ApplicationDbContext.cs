@@ -1,4 +1,5 @@
-﻿using Mail.DAL.Entitys;
+﻿using Mail.DAL.Entities;
+using Mail.DAL.Entitys;
 using Microsoft.EntityFrameworkCore;
 
 namespace Mail.DAL
@@ -12,11 +13,11 @@ namespace Mail.DAL
         /// <summary>
         /// Коллекция писем.
         /// </summary>
-        public DbSet<LetterEnt> Letters { get; init; }
+        public DbSet<Letter> Letters { get; init; }
 
         /// <summary>
         /// Коллекция статусов писем.
         /// </summary>
-        public DbSet<LetterStatusEnt> LetterStatuses { get; init; }
+        public DbSet<LetterStatus> LetterStatuses { get; init; }
     }
 }

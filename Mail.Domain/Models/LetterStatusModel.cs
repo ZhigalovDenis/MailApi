@@ -1,6 +1,6 @@
 ﻿namespace Mail.Domain.Models
 {
-    public class LetterStatus
+    public class LetterStatusModel
     {
         /// <summary>
         /// Дата и время создания письма.

@@ -7,7 +7,8 @@ namespace Mail.Domain.Logic
 {
     internal class SmtpConfigurator
     {
-        private readonly SmtpSettings _emailSettings;
+        private readonly SmtpSettingsModel _emailSettings;
+        private readonly SmtpSettingsModel _emailSettings1;
         private const string ConfigPath = "SMTPConfig.json";
 
         public SmtpConfigurator()
@@ -15,10 +16,13 @@ namespace Mail.Domain.Logic
 
             try
             {
-                string json = File.ReadAllText(ConfigPath);
-                dynamic config = JsonConvert.DeserializeObject(json);
+                string json;
+                using (StreamReader reader = new StreamReader(ConfigPath))
+                {
+                    json = reader.ReadToEnd();
+                }
 
-                _emailSettings = JsonConvert.DeserializeObject<SmtpSettings>(config.EmailSettings.ToString());
+                _emailSettings = JsonConvert.DeserializeObject<SmtpSettingsModel>(json);
             }
             catch (Exception ex)
             {

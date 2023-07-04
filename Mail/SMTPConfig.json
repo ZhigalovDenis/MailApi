@@ -1,7 +1,5 @@
 {
-  "EmailSettings": {
-    "SenderPassword": "your-password",
-    "SmtpHost": "smtp.example.com",
-    "SmtpPort": 587
-  }
+  "SenderPassword": "your-password",
+  "SmtpHost": "smtp.example.com",
+  "SmtpPort": 587
 }

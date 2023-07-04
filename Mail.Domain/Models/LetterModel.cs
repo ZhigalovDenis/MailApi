@@ -1,6 +1,6 @@
 ﻿namespace Mail.Domain.Models
 {
-    public class Letter
+    public class LetterModel
     {
         /// <summary>
         /// Тема письма.

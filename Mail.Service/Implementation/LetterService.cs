@@ -19,7 +19,7 @@ namespace Mail.Service.Implementation
         /// Получить все письма.
         /// </summary>
         /// <returns>Список информации о письмах</returns>
-        public async Task<IEnumerable<LetterInfo>> GetAll()
+        public async Task<IEnumerable<LetterInfoModel>> GetAll()
         {
             return await _letterRepository.GetAll();
         }
@@ -29,7 +29,7 @@ namespace Mail.Service.Implementation
         /// </summary>
         /// <param name="letterInfo"></param>
         /// <returns></returns>
-        public async Task SaveLatter(LetterInfo letterInfo)
+        public async Task SaveLatter(LetterInfoModel letterInfo)
         {
             await _letterRepository.SaveLatter(letterInfo);
         }
@@ -39,7 +39,7 @@ namespace Mail.Service.Implementation
         /// </summary>
         /// <param name="letter">Письмо</param>
         /// <returns></returns>
-        public async Task Send(Letter letter)
+        public async Task Send(LetterModel letter)
         {
             await new LetterSender().Send(letter);
         }

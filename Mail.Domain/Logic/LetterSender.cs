@@ -15,7 +15,7 @@ namespace Mail.Domain.Logic
         /// <param name="letter">Объект письма.</param>
         /// <returns>Асинхронная задача.</returns>
         /// <exception cref="SmtpException">Ошибка при отправке письма.</exception>
-        public async Task Send(Letter letter)
+        public async Task Send(LetterModel letter)
         {
             MailMessage mailMessage = new MailMessage();
             mailMessage.From = new MailAddress(SenderEmail);

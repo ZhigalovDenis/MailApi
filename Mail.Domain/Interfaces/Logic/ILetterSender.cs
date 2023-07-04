@@ -10,6 +10,6 @@ namespace Mail.Domain.Interfaces.Logic
         /// </summary>
         /// <param name="letter">Письмо для отправки.</param>
         /// <returns>Асинхронная задача.</returns>
-        Task Send(Letter letter);
+        Task Send(LetterModel letter);
     }
 }

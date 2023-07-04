@@ -41,18 +41,18 @@ namespace Mail.Helpers
         }
 
         /// <summary>
-        /// Мапинг из модели <see cref="LetterDto"/> в модель <see cref="LetterInfo"./>
+        /// Мапинг из модели <see cref="LetterDto"/> в модель <see cref="LetterInfoModel"./>
         /// </summary>
         /// <param name="letterDto">Объект данных <see cref="LetterDto"./></param>
         /// <param name="result">Статус отправки <see cref="ResultStatus"./></param>
         /// <param name="failedMessage">Сообщение об ошибке <see cref="string"./></param>
-        /// <returns>Возвращает объект <see cref="LetterInfo"./></returns>
-        public static LetterInfo CreateInfo(LetterDto letterDto, ResultStatus result, string failedMessage)
+        /// <returns>Возвращает объект <see cref="LetterInfoModel"./></returns>
+        public static LetterInfoModel CreateInfo(LetterDto letterDto, ResultStatus result, string failedMessage)
         {
-            return new LetterInfo
+            return new LetterInfoModel
             {
                 Letter = LetterDto.ToModel(letterDto),
-                LetterStatus = new LetterStatus
+                LetterStatus = new LetterStatusModel
                 {
                     CreateAt = DateTime.Now,
                     Result = result.ToString(),

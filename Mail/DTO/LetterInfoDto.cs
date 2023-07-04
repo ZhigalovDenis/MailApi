@@ -15,11 +15,11 @@ namespace Mail.DTO
         public LetterStatusDto LetterStatus { get; private init; }
 
         /// <summary>
-        /// Мапинг из модели <see cref="LetterInfo"/> в модель <see cref="LetterInfoDto"./>
+        /// Мапинг из модели <see cref="LetterInfoModel"/> в модель <see cref="LetterInfoDto"./>
         /// </summary>
-        /// <param name="model">Объект данных <see cref="LetterInfo"./></param>
+        /// <param name="model">Объект данных <see cref="LetterInfoModel"./></param>
         /// <returns>Взвращает модель <see cref="LetterInfoDto"./></returns>
-        public static LetterInfoDto fromModel(LetterInfo model)
+        public static LetterInfoDto fromModel(LetterInfoModel model)
         {
             return new LetterInfoDto
             {

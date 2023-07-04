@@ -20,13 +20,13 @@ namespace Mail.DTO
         public string[] Recipients { get; init; }
 
         /// <summary>
-        /// Мапинг из модели <see cref="LetterDto"/> в модель <see cref="Letter"./>
+        /// Мапинг из модели <see cref="LetterDto"/> в модель <see cref="LetterModel"./>
         /// </summary>
         /// <param name="model">Объект данных <see cref="LetterDto"./></param>
-        /// <returns>Взвращает модель <see cref="Letter"./></returns>
-        public static Letter ToModel(LetterDto model)
+        /// <returns>Взвращает модель <see cref="LetterModel"./></returns>
+        public static LetterModel ToModel(LetterDto model)
         {
-            return new Letter
+            return new LetterModel
             {
                 Body = model.Body,
                 Recipients = model.Recipients.ToArray(),
@@ -35,11 +35,11 @@ namespace Mail.DTO
         }
 
         /// <summary>
-        /// Мапинг из модели <see cref="Letter"/> в модель <see cref="LetterDto"/>
+        /// Мапинг из модели <see cref="LetterModel"/> в модель <see cref="LetterDto"/>
         /// </summary>
-        /// <param name="model">Объект данных <see cref="Letter"./></param>
+        /// <param name="model">Объект данных <see cref="LetterModel"./></param>
         /// <returns>Взвращает модель <see cref="LetterDto"./></returns>
-        public static LetterDto FromModel(Letter model) 
+        public static LetterDto FromModel(LetterModel model) 
         {
             return new LetterDto
             {

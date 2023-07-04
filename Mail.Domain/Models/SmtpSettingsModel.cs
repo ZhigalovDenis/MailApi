@@ -1,6 +1,6 @@
 ﻿namespace Mail.Domain.Models
 {
-    internal class SmtpSettings
+    internal class SmtpSettingsModel
     {
         /// <summary>
         /// Пароль отправителя письма.

@@ -20,11 +20,11 @@ namespace Mail.DTO
         public string FailedMessage { get; private init; }
 
         /// <summary>
-        /// Мапинг из модели <see cref="LetterStatus"/> в модель <see cref="LetterStatusDto"./>
+        /// Мапинг из модели <see cref="LetterStatusModel"/> в модель <see cref="LetterStatusDto"./>
         /// </summary>
-        /// <param name="model">Объект данных <see cref="LetterStatus"./></param>
+        /// <param name="model">Объект данных <see cref="LetterStatusModel"./></param>
         /// <returns>Взвращает модель <see cref="LetterStatusDto"./></returns>
-        public static LetterStatusDto FromModel(LetterStatus model)
+        public static LetterStatusDto FromModel(LetterStatusModel model)
         {
             return new LetterStatusDto
             {

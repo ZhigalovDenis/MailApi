@@ -1,15 +1,15 @@
 ﻿namespace Mail.Domain.Models
 {
-    public class LetterInfo
+    public class LetterInfoModel
     {
         /// <summary>
         /// Информация о письме.
         /// </summary>
-        public Letter Letter { get; init; }
+        public LetterModel Letter { get; init; }
 
         /// <summary>
         /// Статус отправки письма.
         /// </summary>
-        public LetterStatus LetterStatus { get; init; }
+        public LetterStatusModel LetterStatus { get; init; }
     }
 }
